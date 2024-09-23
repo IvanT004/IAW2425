@@ -12,5 +12,5 @@ Es **importante** que cuando realices *código fuente* lo subas a tu repositorio
 ---
 Algunos enlaces de interés son:
 
-1. [Página oficial de git] (https://git-scm.com/) 
-2. [Página oficial de Docker] (https://www.docker.com/)
+1. [Página oficial de git](https://git-scm.com/) 
+2. [Página oficial de Docker](https://www.docker.com/)
