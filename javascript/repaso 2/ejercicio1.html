@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Índice de masa corporal</title>
+</head>
+<body>
+    Peso: <input type="text" placeholder="Introduce tu peso en Kg" id="peso">
+    Estatura: <input type="text" placeholder="Introduce tu estatura en cm" id="estatura">
+    <p id="resultado"></p>
+    <button onclick="calcularIMC()">Calcular IMC</button>
+
+    <script>
+        function calcularIMC (){
+            let peso = parseInt(document.getElementById("peso").value);
+            let estatura = parseInt (document.getElementById("estatura").value);
+            let estaturaElevada = estatura.pow(estatura,2);
+            let resultado = peso/estaturaElevada;
+            document.getElementById("resultado").innerHTML = "Tu IMC es de " + resultado;
+        }
+    </script>
+</body>
+</html>
