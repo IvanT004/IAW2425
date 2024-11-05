@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#" type="image/x-icon">
+    <title>Ejercicio 3</title>
+</head>
+<body>
+    <div id="formulario">
+        <form action="">
+            <!--<p>Nombre: <input type="text" id="nombre" required></p>
+            <p>Apellidos: <input type="text" id="apellidos" required></p>
+            <p>Correo electrónico: <input type="email" id="email" required></p>
+            <p>Dirección: <input type="text" id="direccion"></p>
+            <p>Ciudad: <input type="text" id="ciudad"></p>
+            <p>Teléfono: <input type="text" id="telefono"></p>
+            <p>DNI: <input type="text" id="dni" required></p>-->
+            <p>PIN: <input type="password" id="pin" required><span id="mensajepin"></span></p>
+            <p>PIN repetido: <input type="password" id="pinrepetido" required><span id="mensajepin2"></span></p>
+            <button onclick="validar()">Enviar</button>
+        </form>
+    </div>
+    <script>
+        function validar () {
+            event.preventDefault();
+            let expresion = /^\d{8}$/;
+            let pin1 = document.getElementById("pin").value;
+            let pin2 = document.getElementById("pinrepetido").value;
+            if(!expresion.test(pin1)){
+                document.getElementById("mensajepin").innerHTML = " Debe introducir una contraseña de 8 digitos";
+                document.getElementById("mensajepin2").innerHTML = " Debe introducir una contraseña de 8 digitos";
+
+            }else if(!pin1==pin2){
+                document.getElementById("mensajepin").innerHTML = "Los pines deben ser iguales";
+                document.getElementById("mensajepin2").innerHTML = "Los pines deben ser iguales";
+
+            }else 
+                document.getElementById("mensajepin").innerHTML = "";
+                document.getElementById("mensajepin2").innerHTML = "";
+
+        }
+    </script>
+</body>
+</html>

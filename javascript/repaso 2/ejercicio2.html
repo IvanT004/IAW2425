@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+<body>
+    Escriba su mensaje: <input type="text" id="mensaje">
+    <button onclick="mostrar()">Publicar mensaje</button>
+    <div id="publicaciones"></div>
+    <script>
+        function mostrar () {
+            let mensaje = document.getElementById("mensaje").value;
+            let publicaciones = document.getElementById("array");
+            let contenido = document.createElement('<div id="mensaje"></div>');
+            contenido.textContent(mensaje+'<img onclick="eliminar()" width="60px" src="/img/borrar-mensaje.png" alt="icono">');
+            publicaciones.appendChild(contenido);
+        }
+    </script>
+</body>
+</html>
