@@ -14,8 +14,8 @@
             <p>Correo electrónico: <input type="email" id="email" required></p>
             <p>Dirección: <input type="text" id="direccion"></p>
             <p>Ciudad: <input type="text" id="ciudad"></p>
-            <p>Teléfono: <input type="text" id="telefono"></p>
-            <p>DNI: <input type="text" id="dni" required></p>-->
+            <p>Teléfono: <input type="text" id="telefono"></p>-->
+            <p>DNI: <input type="text" id="dni" required><span id="errorDNI"></span></p>
             <p>PIN: <input type="password" id="pin" required><span id="mensajepin"></span></p>
             <p>PIN repetido: <input type="password" id="pinrepetido" required><span id="mensajepin2"></span></p>
             <button onclick="validar()">Enviar</button>
@@ -38,6 +38,13 @@
             }else 
                 document.getElementById("mensajepin").innerHTML = "";
                 document.getElementById("mensajepin2").innerHTML = "";
+
+            
+            let cadenaDNI = document.getElementById('dni').value;
+            let ex_regular_dni = /^\d{8}(?:[-\s]\d{4})?$/;
+            while(ex_regular_dni.test (dni) == true){
+                alert('Dni no válido');
+            }
 
         }
     </script>
