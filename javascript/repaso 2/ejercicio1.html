@@ -20,9 +20,9 @@
             let resultado = peso/estaturaElevada;
             if(resultado < 18.5)
                 document.getElementById("resultado").innerHTML = "Tu IMC es de " + resultado + ". Su peso es inferior al normal";
-            else if (resultado <= 24.9 && resultado >= 18.5)
+            else if (resultado <= 24.9)
                 document.getElementById("resultado").innerHTML = "Tu IMC es de " + resultado + ". Su peso es normal";
-            else if (resultado >= 25 && resultado <= 29.9)
+            else if (resultado <= 30)
                 document.getElementById("resultado").innerHTML = "Tu IMC es de " + resultado + ". Su peso es superior al normal";
             else if(resultado > 30)
                 document.getElementById("resultado").innerHTML = "Tu IMC es de " + resultado + ". Usted tiene sobrepeso";

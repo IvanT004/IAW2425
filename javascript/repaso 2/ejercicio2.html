@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#" type="image/x-icon">
     <title>Ejercicio 2</title>
 </head>
 <body>
@@ -13,8 +14,8 @@
         function mostrar () {
             let mensaje = document.getElementById("mensaje").value;
             let publicaciones = document.getElementById("array");
-            let contenido = document.createElement('<div id="mensaje"></div>');
-            contenido.textContent(mensaje+'<img onclick="eliminar()" width="60px" src="/img/borrar-mensaje.png" alt="icono">');
+            let contenido = document.createElement('div');
+            contenido.ELEMENT_NODE(mensaje+'<img onclick="eliminar()" width="60px" src="/img/borrar-mensaje.png" alt="icono">');
             publicaciones.appendChild(contenido);
         }
     </script>
