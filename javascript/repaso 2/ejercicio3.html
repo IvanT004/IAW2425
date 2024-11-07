@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="#" type="image/x-icon">
-    <script src="/javascript/scripts/repaso2Ej3.js"></script>
-    <link rel="stylesheet" href="/javascript/css/repaso2Ej3.css">
+    <link rel="stylesheet" href="../css/repaso2Ej3.css">
     <title>Ejercicio 3</title>
 </head>
 <body>
     <div id="panel">
-        <form action="">
-            <div class="ordenado"><label>Nombre *</label><input type="text" id="campo1" required placeholder="Nombre"><span id="errornombre"></span></div>
+        <!-- <form action=""> -->
+           <div class="ordenado"><label>Nombre *</label><input type="text" id="campo1" required placeholder="Nombre"><span id="errornombre"></span></div>
             <div class="ordenado"><label>Apellidos *</label><input type="text" id="campo2" required placeholder="Apellidos"><span id="errorapellidos"></span></div>
             <div class="ordenado"><label>Correo electrónico *</label><input type="email" id="campo3" required placeholder="Correo"><span id="errorcorreo"></span></div>
             <div class="ordenado"><label>Dirección:</label><input type="text" id="campo4" placeholder="Dirección"></div>
@@ -20,8 +19,11 @@
             <div class="ordenado"><label>DNI *</label><input type="text" id="campo7" required placeholder="DNI"><span id="errorDNI"></span></div>
             <div class="ordenado"><label>PIN *</label><input type="password" id="campo8" required placeholder="PIN"><span id="errormensajepin"></span></div>
             <div class="ordenado"><label>PIN repetido *</label><input type="password" id="campo9" required placeholder="Repetir PIN"><span id="errormensajepin2"></span></div>
-            <p><button id="validar" onclick="validar(document.getElementsByTagName('input'))"><span>Enviar</span></button></p>
-        </form>
+            <p><button id="validar"><span>Enviar</span></button></p>
+            <p id="resultado"></p>
+        <!-- </form> -->
     </div>
+    <script src="../scripts/repaso2Ej3.js"></script>
+
 </body>
 </html>
