@@ -20,7 +20,7 @@
 
 
 
-        function validar(campos){
+        document.getElementById("validar").addEventListener('click',function(){
             
             let estanCorrectos = true;
             for (var i=0;i<campos.length;i++){
@@ -59,4 +59,4 @@
                 document.getElementById("errormensajepin2").innerHTML = "Debe introducir una contraseña segura";
             }
 
-        };
+        });
