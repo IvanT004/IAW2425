@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+    <style>
+        #contenedor{
+            display: grid;
+            grid-row: auto auto;
+            grid-gap: 0.7rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Adivina el número que he generado...</h1>
+    <div id="contenedor">
+        <label for="">Indica un número entre 0 y 5</label>
+        <input type="text" id="intento">
+    </div>
+    <button id="comprobar">Comprobar</button>
+    
+    <script>
+        function generarNumero(){
+            return Math.floor((Math.random()*5) + 0);
+        }
+        document.getElementById("comprobar").addEventListener('click',function(){
+            let intento = parseInt(document.getElementById("intento").value);
+            if(generarNumero() == intento)
+                alert("Has acertado el número  generado. Felicidades!!");
+            else
+                alert("Casi, inténtalo de nuevo");
+        });
+    </script>
+</body>
+</html>
