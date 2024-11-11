@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1 de JQuery</title>
+    <script src="jquery-3.7.1.js"></script><!--Opcion local-->
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>-->
+</head>
+<body>
+    <h1>Ejemplo de JQuery</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, nisi! Maxime tempore eaque, incidunt quam sunt minima doloribus aut iure autem, laborum nisi aliquam sint sit id ab fugiat aliquid.</p>
+    <p class="par">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias in dolores minus magni praesentium aspernatur, dignissimos mollitia facilis quas voluptatibus ea nihil provident nobis? Veniam dignissimos quia officia explicabo laboriosam?</p>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus iusto nam dolorem distinctio cum soluta a et minus voluptatum in, veritatis, debitis ab necessitatibus. Sint minus perspiciatis quasi non consequuntur?</p>
+    <p class="par">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident nulla possimus impedit asperiores ipsam facilis obcaecati quo tempora nam, esse dignissimos voluptas autem qui, quibusdam maxime officia. Libero, sed quis!</p>
+    <button id="ocultar">Click para ocultar párrafo</button>
+    <button id="mostrar">Click para mostrar párrafo</button>
+    <button id="alternar">Alternar</button>
+    <script>
+        $(document).ready(function () {
+            $("#ocultar").click(function(){
+                $(".par").hide();
+            });
+            $("#mostrar").click(function(){
+                $(".par").show();
+            });
+            $("#alternar").click(function(){
+                $(".par").toggle();
+            });
+        });
+    </script>
+</body>
+</html>
