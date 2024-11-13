@@ -1,0 +1,5 @@
+body{display: grid; justify-content: center;}
+label{display: grid; grid-template-columns: 1fr; gap: 1rem;}
+form{display: grid; width: max-content;}
+input{margin-bottom: 1rem;}
+
