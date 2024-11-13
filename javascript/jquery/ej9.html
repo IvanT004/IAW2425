@@ -17,6 +17,7 @@
         }
     </style>
     <!-- Incluye aquí jQuery -->
+    <script src="jquery-3.7.1.js"></script>
 </head>
 <body>
     <h1>Las funciones each y append en jQuery</h1>
@@ -31,6 +32,11 @@
 
     <script>
         /* Rellena aquí el código jQuery */
+        $(document).ready(function () {
+            $("ul").each(function(){
+                $("a").append("<img src='../../img/descarga_icono.png' width='30px'></img>");
+            });
+        });
      </script>
 </body>
 </html>
