@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#" type="image/x-icon">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alexandria">
     <title>Fake Store API</title>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"
@@ -65,6 +66,9 @@
             background-color: #545662;
             opacity: 0.8;
         }
+        #prodcuto{
+            text-align: center;
+        }
     </style>
 </head>
 
@@ -84,14 +88,52 @@
         </div>
     </div>
     <script>
-        $.ajax({
-            url:"https://fakestoreapi.com/products",
-            success: function(datos){
-            
-                for(let i = 0; i < datos.length; i++){
-                    
+        $(document).ready(function () {
+            $("#btn-producto").click(function(){
+                $("#resultados").empty();
+                let id = $("#codProducto").val();
+                if(id > 0){
+                    $.get("https://fakestoreapi.com/products/" + id).done(function (data) {
+                        console.log(data);
+                        let imagen = data.image;
+                        let titulo = data.title;
+                        let descripcion = data.description;
+                        let precio = data.price;
+                        $("#resultados").append(
+                            "<p><img width='200px' src=" + imagen + "></p>" +
+                            "<p>" + "Título : " + titulo + "</p>"+
+                            "<p>" + "Descripción: " + descripcion + "</p>"+
+                            "<p>" + "Precio: " + precio + "€" + "</p>"
+                        );
+                    }).fail(function(){
+                        alert("Error cargando datos del servidor");
+                    });
                 }
-            }
+            });
+        });
+        $("#btn-todos").click(function(){
+            $.ajax({
+                url:"https://fakestoreapi.com/products",
+                success: function(data){
+                    console.log(data);
+                    for(let i = 0; i < data.length; i++){
+                        let imagen = data[i].image;
+                        let titulo = data[i].title;
+                        let descripcion = data[i].description;
+                        let precio = data[i].price;
+                        $("#resultados").append("<div id='producto'></div>")
+                        $("#producto").append(
+                            "<p><img width='200px' src=" + imagen + "></p>" +
+                            "<p>" + "Título : " + titulo + "</p>"+
+                            "<p>" + "Descripción: " + descripcion + "</p>"+
+                            "<p>" + "Precio: " + precio + "€" + "</p>"
+                        );
+                    }
+                },
+                error: function(){
+                    alert("Error cargando datos del servidor");
+                }
+            });
         });
     </script>
 </body>
