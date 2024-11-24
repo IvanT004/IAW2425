@@ -112,6 +112,7 @@
             });
         });
         $("#btn-todos").click(function(){
+            $("#resultados").empty();
             $.ajax({
                 url:"https://fakestoreapi.com/products",
                 success: function(data){
