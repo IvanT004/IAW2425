@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <title>Ver POST sitio web</title>
+</head>
+<body>
+    <button>Ver Posts</button>
+    <div id="contenedor"></div>
+</body>
+<script>
+    $(document).ready(function () {
+        $("button").click(function(){
+            $.ajax({
+                url:"https://jsonplaceholder.typicode.com/todos/",
+                success: function(datos){
+                    $(datos.length).each(index,element,function(){
+                        let userid = datos[index].userId;
+                        let id = datos[index].id;
+                        let title = datos [index].title;
+                        let completed = datos[index].completed;
+                        $("#contenedor").append("<p>"+userid+"</p><p>"+id+"</p><p>"+title+"</p><p>"+completed+"</p>");
+                    });
+                },
+                error: function(){}
+            });
+        });
+    });
+</script>
+</html>
