@@ -19,15 +19,14 @@
         $(document).ready(function () {
             $("button").click(function(){
                 $.ajax({
-                    url:"https://jsonplaceholder.typicode.com/todos/",
+                    //No funcionan todas las fotos (es algo del servidor no mío)
+                    url:"https://jsonplaceholder.typicode.com/photos/",
                     success: function(datos){
                         $("#contenedor").empty();
                         $(datos).each(function(index,element){
-                            let userid = datos[index].userId;
                             let id = datos[index].id;
-                            let title = datos [index].title;
-                            let completed = datos[index].completed;
-                            $("#contenedor").append("<div class='formato'><p>"+userid+"</p><p>"+id+"</p><p>"+title+"</p><p>"+completed+"</p></div>");
+                            let url = datos[index].url;
+                            $("#contenedor").append("<div class='formato'><p>"+id+"</p><img src="+url+"></div>");
                         });
                     },
                     error: function(datos){
