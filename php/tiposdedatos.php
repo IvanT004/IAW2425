@@ -12,7 +12,7 @@
         $cadenas="Esto es una cadena";
         $booleanas=true;
         $arrays=[1,2,3,4];
-        var_dump(mixed $enteros,mixed $reales,mixed $cadenas,mixed $booleanas,mixed $arrays = ?);
+        var_dump($enteros,mixed $reales,mixed $cadenas,mixed $booleanas,mixed $arrays = ?);
     ?>
 </body>
 </html>
