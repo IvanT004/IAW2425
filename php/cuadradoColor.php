@@ -1,5 +1,5 @@
 <?php
-        $generado = rand(100000,999999);
+        $generado = rand(0,999999);
 ?>
 
 <!DOCTYPE html>
