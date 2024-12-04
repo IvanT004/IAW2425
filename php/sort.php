@@ -18,7 +18,7 @@
         sort($palabras);
         $totalPalabras = count($palabras);
         for($i=0;$i<=$totalPalabras-1;$i++){
-            echo"$palabras[$i]<br>";
+            echo"$palabras[$i]<br>+";
         }
     ?>
 </body>
