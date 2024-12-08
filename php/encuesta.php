@@ -9,7 +9,8 @@
         body{
             display: flex;
             justify-content:center;
-            align-content:center;
+            align-items :center;
+            min-height: 100vh;
         }
         form div{
             display:flex;
@@ -27,11 +28,11 @@
             <input type="text" name="nombre" id="nombre" placeholder="nombre">
         </div>
         <div class="estructurado">
-            <label for="">*Género:</label>
+            <label for="genero">*Género:</label>
             <select name="genero" id="genero">
-                <option value="1">Hombre</option>
-                <option value="2">Mujer</option>
-                <option value="">Otro</option>
+                <option value="Hombre">Hombre</option>
+                <option value="Mujer">Mujer</option>
+                <option value="Otro">Otro</option>
             </select>
         </div>
         <div class="estructurado">
@@ -40,21 +41,21 @@
         </div>
         <div class="estructurado" id="espaciado">
             <label for="">*Elija su nacionalidad:</label>
-            <label for="">Española<input type="radio" name="nacionalidad" id="espanola"></label>
-            <label for="">Portuguesa<input type="radio" name="nacionalidad" id="portuguesa"></label>
-            <label for="">Francesa<input type="radio" name="nacionalidad" id="francesa"></label>
+            <label for="">Española<input type="radio" name="nacionalidad" value="española" id="espanola"></label>
+            <label for="">Portuguesa<input type="radio" name="nacionalidad" value="portuguesa" id="portuguesa"></label>
+            <label for="">Francesa<input type="radio" name="nacionalidad" value="francesa" id="francesa"></label>
         </div>
-        <input type="button" value="Enviar">
+        <input type="submit" value="Enviar">
         <?php
             
-                if(isset($_POST["nombre"]) || isset($_POST["genero"]) || isset($_POST["nacionalidad"]))
+                if(empty($_POST["nombre"]) || empty($_POST["genero"]) || empty($_POST["nacionalidad"]))
                     echo"<div class='estructurado'>Debes de rellenar los campos obligatorios</div>";
-                /*else{
+                else{
                         echo"<p>Los datos se enviaron exitosamente:</p>";
-                        echo"<p>Nombre: " . $_POST["nombre"] . "</p>";
-                        echo"<p>Genero: " . $_POST["genero"] . "</p>";
-                        echo"<p>Nacionalidad: " . $_POST["nacionalidad"] ."</p>";
-                }*/
+                        echo"<p>Nombre: " . htmlspecialchars($_POST["nombre"]) . "</p>";
+                        echo"<p>Genero: " . htmlspecialchars($_POST["genero"]) . "</p>";
+                        echo"<p>Nacionalidad: " . htmlspecialchars($_POST["nacionalidad"]) ."</p>";
+                }
             
         ?>
     </form>
