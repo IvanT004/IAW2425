@@ -7,9 +7,12 @@
 </head>
 <body>
     <?php
-        for($i=1;$i<=7;$i+=2){
-            echo"*";
-        }  
-    ?>    
+        for($i=17; $i <= ; $i++){
+            for($x=1; $x <= $i; $x++){
+                echo"*";
+            }
+            echo"<br>";
+        }
+    ?>      
 </body>
 </html>
