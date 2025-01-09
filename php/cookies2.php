@@ -1,5 +1,5 @@
 <?php
-setcookie("nombre","Pepito conejo");ç
+setcookie("nombre","Pepito conejo");
 //Cookie con matriz de datos
 setcookie("datos[nombre]", "Pepito");
 setcookie("datos[apellidos]", "Conejo");
