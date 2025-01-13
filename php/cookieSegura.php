@@ -6,7 +6,7 @@ echo "Numero de visitas: ". $_COOKIE['visitas'] . " usando el idioma " . $_COOKI
 }
 else {
 
-setcookie( 'visitas', 1, time() + 3600 * 24 );
+setcookie( 'visitas', 1, time() + 3600 * 24, httponly:true);
 header("Set-Cookie: name=value; HttpOnly");
 echo 'Bienvenido por primera vez a nuesta web';
 }
