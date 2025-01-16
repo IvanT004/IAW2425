@@ -10,7 +10,7 @@
     }
 
 //Construcion de la Query
-    $query = "INSERT VALUES(Lucia,Carpizo Perez,peparodriguez04@iesamachado.org) INTO usuarios";
+    $query = "INSERT INTO usuarios VALUES(Lucia,Carpizo Perez,peparodriguez04@iesamachado.org)";
 
 //Ejecución de la Query
     $resultado = mysqli_query($enlace, $query);
