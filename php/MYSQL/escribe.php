@@ -10,11 +10,11 @@
     }
 
 //Construcion de la Query
-    $query = "INSERT INTO usuarios VALUES(Lucia,Carpizo Perez,peparodriguez04@iesamachado.org)";
+    $query = "INSERT INTO usuarios (nombre,apellidos,email) VALUES('Lucia','Carpizo Perez','luciacarpizo06@iesamachado.org')";
 
 //Ejecución de la Query
     $resultado = mysqli_query($enlace, $query);
-
+    
 //Procesamiento de los datos
     //Al menos tengo un registro que mostrar
     if($resultado){
