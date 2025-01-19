@@ -4,7 +4,7 @@
     <title>Registro</title>
     <style>
         div{margin:1rem;}
-        body{display:flex; flex-direction: column; align-items:center;text-align:center;justify-content:center;}
+        body{display:flex;flex-direction: column; align-items:center;text-align:center;justify-content:center;}
         input{border-radius:4px;padding:1rem;width:400px;}    
         form{justify-items:center;}
         button{border-radius:4px;padding:1rem;background-color:#d3e9fe;}
@@ -23,7 +23,7 @@
         <div><input type='password' placeholder='Repite la contraseña*' name='contrasena2' required></div>
         <div><input type='text' placeholder='Provincia*' name='provincia' required></div>
         <div><input type='text' placeholder='Código Postal' name='codPostal' ></div>
-        <button name='enviar'>Crear cuenta</button>"
+        <button type='submit' name='enviar'>Crear cuenta</button>
     </form>
 
 <?php
@@ -39,7 +39,7 @@ if(isset($_POST['enviar'])){
     $contrasena2 = htmlspecialchars($_POST['contrasena2']);
     $provincia = htmlspecialchars($_POST['provincia']);
     $codPostal = htmlspecialchars($_POST['codPostal']);
-    
+   
     if($contrasena !== $contrasena2){
         die("Las contraseñas deben coincidir.");
     }else{
@@ -56,15 +56,17 @@ if(isset($_POST['enviar'])){
         }
 
         //Construcción de la consulta
-        $query = "INSERT INTO registro('Nombre', 'Apellidos', 'Telefono', 'DNI', 'CorreoElectronico', 'Contrasena', 'Provincia', 'CodigoPostal') VALUES ('$nombre','$apellidos','$telefono','$dni','$email','$hash','$provincia','$codPostal')";
+        $query = "INSERT INTO registro (Nombre,Apellidos,Telefono,DNI,CorreoElectronico,Contrasena,Provincia,CodigoPostal) VALUES ('$nombre','$apellidos','$telefono','$dni','$email','$hash','$provincia','$codPostal')";
 
         //Ejecución de la consulta
         $resultado = mysqli_query($enlace,$query);
-        if(!$resultado){
-            echo "Los datos se registraron correctamente";
+        if($resultado){
+            echo("Los datos se registraron correctamente");
         }else{
-            die("Hubo un erro al registrar los datos: " . mysqli_error($enlace));
+            echo("Hubo un error al registrar los datos");
         }
+        //Enviar correo
+        $mensaje = "¡Gracias por registrarte $nombre!. Se ha registrado con los siguientes datos: <br>Nombre:$nombre<br>Apellidos:$apellidos<br>Telefono:$telefono<br>DNI:$dni<br>Provincia:$provincia";
 
         //Cerramos conexión
         mysqli_close($enlace);
