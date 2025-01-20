@@ -19,7 +19,7 @@ if(isset($_POST['enviar'])){
         //Datos de conexión con la base de datos
         $servername = "sql308.thsite.top";
         $username = "thsi_38097482";
-        $password = "1d9N0!2E";
+        $password = "";
         $bd = "thsi_38097482_BDIvan";
         $enlace = mysqli_connect($servername,$username,$password,$bd);
         if(!$enlace){
